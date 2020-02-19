@@ -1,6 +1,6 @@
 #!/bin/bash
 
-apt update
+apt  update
 DEBIAN_FRONTEND=noninteractive apt -y install php-cli
 #DEBIAN_FRONTEND=noninteractive apt -y install apache2
 DEBIAN_FRONTEND=noninteractive apt -y install php-mbstring
@@ -22,6 +22,9 @@ DEBIAN_FRONTEND=noninteractive apt -y install php-xdebug
 DEBIAN_FRONTEND=noninteractive apt -y install wget
 DEBIAN_FRONTEND=noninteractive apt -y install php-sybase
 DEBIAN_FRONTEND=noninteractive apt -y install php-sqlite3
+#DEBIAN_FRONTEND=noninteractive apt -y install mycli
+DEBIAN_FRONTEND=noninteractive apt -y install default-mysql-client
 wget https://cs.symfony.com/download/php-cs-fixer-v2.phar -O /usr/bin/php-cs-fixer
 chmod +x /usr/bin/php-cs-fixer
-find /etc/ -iname php.ini | awk  '{print "cat /xdebug.ini >> "$1}' | /bin/bash
+#find /etc/ -iname php.ini | awk  '{print "cat /xdebug.ini >> "$1}' | /bin/bash
+find /etc/ -iname php.ini | awk  '{print "cp /php.ini "$1}' | /bin/bash
