@@ -26,5 +26,7 @@ DEBIAN_FRONTEND=noninteractive apt -y install php-sqlite3
 DEBIAN_FRONTEND=noninteractive apt -y install default-mysql-client
 wget https://cs.symfony.com/download/php-cs-fixer-v2.phar -O /usr/bin/php-cs-fixer
 chmod +x /usr/bin/php-cs-fixer
+wget  https://squizlabs.github.io/PHP_CodeSniffer/phpcbf.phar -O /usr/bin/phpcs
+chmod +x /usr/bin/phpcs
 #find /etc/ -iname php.ini | awk  '{print "cat /xdebug.ini >> "$1}' | /bin/bash
 find /etc/ -iname php.ini | awk  '{print "cp /php.ini "$1}' | /bin/bash
